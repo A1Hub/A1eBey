@@ -1,0 +1,27 @@
+*{
+    font-family: "Maven Pro", "abel", "ROBOTO" , -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}
+
+
+body {
+    padding: 10px;
+    text-align: center;
+}
+.nav{
+    display: contents;
+}
+.A1 {
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+.btn-primary {
+    color: #fff;
+    margin: 4px;
+    background-color: #007bff;
+    border-color: #007bff; 
+}
+
