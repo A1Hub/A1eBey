@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --TODO--
 [ ] Listing
     [ ] Delete products from watchlist
