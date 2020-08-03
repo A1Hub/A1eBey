@@ -1,0 +1,29 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Watchlist</h2>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Title</th>
+        <th scope="col">Minimum Price</th>
+        <th scope="col">Current Price</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for watchlist in watchlists %}
+            {% if watchlist.user == request.user %}
+            {% for data in watchlist.product.all %}
+            <tr>
+                <td>{{ data.category }}</td>
+                <td>{{ data.title }}</td>
+                <td>{{ data.min_price }}</td>
+                <td><a href="{% url 'delete_watchlist' listing.id %}" class="btn btn-primary">Delete</a></td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

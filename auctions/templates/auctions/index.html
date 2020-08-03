@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for listing in listings %}
+        {% if listing.status == 'Active' %}
+        <div class="A1">
+            <div class="card" style="width: 35%; 
+            box-shadow: 2px 20px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            border-top: 6px solid rgba(255, 255, 255, 0.185);
+            background: #fdfcfcd0;
+            margin: 25px ;
+            padding: 1.5px ;">
+                <img src="{{ listing.imgurl }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ listing.title }} ${{ listing.min_price}} </h5>
+                <p class="card-text">{{ listing.description }}</p>
+                <a href="{% url 'product_detail' listing.id %}" class="btn btn-primary">Bid</a> <a href="{% url 'add_watchlist' listing.id %}" class="btn btn-primary">Add to watchlist</a>
+            </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
